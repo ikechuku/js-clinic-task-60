@@ -1,0 +1,14 @@
+.seat {
+  cursor: pointer;
+}
+.booked {
+  background-color: rgb(181, 174, 244);
+  color: white;
+  cursor: default;
+}
+
+.booked :hover {
+  background-color: rgb(181, 174, 244);
+  color: white;
+    cursor: default;
+}

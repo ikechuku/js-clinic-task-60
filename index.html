@@ -1,12 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Parking Lot</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body class="bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800">
+
+    <header class="bg-transparent fixed w-full top-0 left-0 z-30">
+        <div class="container p-5 mx-auto  flex items-center justify-between ">
+            <div class="flex">
+                <img src="logo.png" alt="aji" class="object-cover mx-auto w-20 h-20 rounded-full w-10 h-10">
+                <p class="text-xl text-white ml-3"><strong>JS</strong> <span>Park</span></p>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div
+        class="relative border border-gray-700 shadow-xl mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:p-24 sm:pb-0 rounded-3xl shadow-xl">
+        <div class="flex-col flex  self-center lg:p-14 sm:max-w-4xl xl:max-w-md  z-10">
+            <div class="self-start hidden lg:flex flex-col  text-gray-300">
+
+                <h1 class="my-3 font-semibold text-4xl">Welcome to JS Park </h1>
+                <p class="pr-3 text-sm opacity-75">Lorem ipsum is placeholder text commonly used in the graphic, print,
+                    and publishing industries for previewing layouts and visual mockups</p>
+            </div>
+        </div>
+        <div class="flex justify-center self-center z-10">
+            <div class="p-12 bg-white mx-auto rounded-3xl w-96 ">
+                <div class="mb-7">
+                    <h3 class="font-semibold text-2xl text-gray-800">Book available seats </h3>
+                    <p class="text-gray-500">20 seats available </p>
+                </div>
+                <div class="space-y-6">
+
+
+                    <div class="flex items-center justify-between">
+
+                        <div class="text-sm ml-auto">
+                            <a href="#" class="text-purple-700 hover:text-purple-600">
+                                Need help?
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap justify-between h-full">
+                        <div onclick=bookSeat(this.id) id="seat1"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            1
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat2"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            2
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat3"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            3
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat4"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            4
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat5"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            5
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat6"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            6
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat7"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            7
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat8"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            8
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat9"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            9
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat10"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            10
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat11"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            11
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat12"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            12
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat13"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            13
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat14"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            14
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat15"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            15
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat16"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            16
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat17"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            17
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat18"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            18
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat19"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            19
+                        </div>
+                        <div onclick=bookSeat(this.id) id="seat20"
+                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
+                            20
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-5 w-full ">
+
+                        <button type="submit"
+                            class="w-full flex items-center justify-center mb-6 md:mb-0 border border-gray-700 hover:border-gray-900 hover:bg-gray-900 text-sm text-gray-300 p-3  rounded-lg tracking-wide font-medium  cursor-pointer transition ease-in duration-500">
+
+
+
+                            <span>Google</span>
+                        </button>
+
+                        <button type="submit"
+                            class="w-full flex items-center justify-center mb-6 md:mb-0 border border-gray-700 hover:border-gray-900 hover:bg-gray-900 text-sm text-gray-300 p-3  rounded-lg tracking-wide font-medium  cursor-pointer transition ease-in duration-500 px-">
+
+                            <span>Facebook</span>
+                        </button>
+
+                    </div>
+                </div>
+                <div class="mt-7 text-center text-gray-400 text-xs">
+                    <span>
+                        Copyright © 2022
+                        <a href="https://github.com/ikechuku/js-clinic-task-60.git" rel="" target="_blank" title=""
+                            class="text-violet-500 hover:text-violet-600 ">JS Park</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>

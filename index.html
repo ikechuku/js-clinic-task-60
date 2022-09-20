@@ -9,6 +9,7 @@
     <title>Parking Lot</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800">
 
     <header class="bg-transparent fixed w-full top-0 left-0 z-30">
@@ -23,8 +24,103 @@
 
 
     <div
-        class="relative border border-gray-700 shadow-xl mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:p-24 sm:pb-0 rounded-3xl shadow-xl">
-        <div class="flex-col flex  self-center lg:p-14 sm:max-w-4xl xl:max-w-md  z-10">
+        class=" relative shadow-xl mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:p-24 sm:pb-0 rounded-3xl shadow-xl">
+        <div class="flex-col flex  self-center lg:p-14 sm:max-w-4xl xl:max-w-md  z--10">
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal" x-transition:enter="transition duration-300 ease-out"
+                x-transition:enter-start="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+                x-transition:enter-end="translate-y-0 opacity-100 sm:scale-100"
+                x-transition:leave="transition duration-150 ease-in"
+                x-transition:leave-start="translate-y-0 opacity-100 sm:scale-100"
+                x-transition:leave-end="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
+                class="fixed inset-0 z--10 overflow-y-auto">
+
+                <!-- Modal content -->
+                <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                    <div
+                        class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                        <div>
+
+                            <div class="mt-2 text-center">
+                                <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize dark:text-white"
+                                    id="modal-title">
+                                    Book a seat</h3>
+                                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                    Each parking spot costs N2 per minute for small cars and N3.5 per minute for larger
+                                    cars
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="w-full max-w-xs">
+                            <form class="bg-transparent shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                        Full Name
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="username" type="text" placeholder="Username">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="reg">
+                                        Car Registration Number
+                                    </label>
+                                    <input
+                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                        id="registration" type="text" placeholder="reg no">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="reg">
+                                        Car Size
+                                    </label>
+
+                                    <div class="inline-block relative w-64">
+                                        <select
+                                            class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+
+                                            <option>Small</option>
+                                            <option>Large</option>
+                                        </select>
+                                        <div
+                                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20">
+                                                <path
+                                                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <p class="text-center text-gray-500 text-xs">
+                                    &copy;2022 Acme Corp. All rights reserved.
+                                </p> -->
+                            </form>
+                        </div>
+
+                        <div class="mt-5 sm:flex sm:items-center sm:justify-between">
+
+
+                            <div class="sm:flex sm:items-center ">
+                                <button @click="isOpen = false"
+                                    class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:mt-0 sm:w-auto sm:mx-2 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 close">
+                                    Cancel
+                                </button>
+
+                                <button
+                                    class="w-full px-4 py-2 mt-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:w-auto sm:mt-0 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                    Book Parking
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             <div class="self-start hidden lg:flex flex-col  text-gray-300">
 
                 <h1 class="my-3 font-semibold text-4xl">Welcome to JS Park </h1>
@@ -32,7 +128,7 @@
                     and publishing industries for previewing layouts and visual mockups</p>
             </div>
         </div>
-        <div class="flex justify-center self-center z-10">
+        <div class="flex justify-center self-center z--10">
             <div class="p-12 bg-white mx-auto rounded-3xl w-96 ">
                 <div class="mb-7">
                     <h3 class="font-semibold text-2xl text-gray-800">Book available seats </h3>
@@ -49,106 +145,12 @@
                             </a>
                         </div>
                     </div>
-                    <div class="flex flex-wrap justify-between h-full">
+                    <div class="flex flex-wrap justify-between h-full" id="lots">
                         <div onclick=bookSeat(this.id) id="seat1"
                             class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
                             1
                         </div>
-                        <div onclick=bookSeat(this.id) id="seat2"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            2
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat3"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            3
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat4"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            4
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat5"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            5
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat6"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            6
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat7"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            7
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat8"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            8
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat9"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            9
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat10"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            10
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat11"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            11
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat12"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            12
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat13"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            13
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat14"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            14
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat15"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            15
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat16"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            16
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat17"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            17
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat18"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            18
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat19"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            19
-                        </div>
-                        <div onclick=bookSeat(this.id) id="seat20"
-                            class="w-2/12 m-2 border h-10 rounded seat transition ease-in duration-500 flex justify-center items-center text-gray-500 ">
-                            20
-                        </div>
                     </div>
-
-                    <!-- <div class="flex justify-center gap-5 w-full ">
-
-                        <button type="submit"
-                            class="w-full flex items-center justify-center mb-6 md:mb-0 border border-gray-700 hover:border-gray-900 hover:bg-gray-900 text-sm text-gray-300 p-3  rounded-lg tracking-wide font-medium  cursor-pointer transition ease-in duration-500">
-
-
-
-                            <span>Google</span>
-                        </button>
-
-                        <button type="submit"
-                            class="w-full flex items-center justify-center mb-6 md:mb-0 border border-gray-700 hover:border-gray-900 hover:bg-gray-900 text-sm text-gray-300 p-3  rounded-lg tracking-wide font-medium  cursor-pointer transition ease-in duration-500 px-">
-
-                            <span>Facebook</span>
-                        </button>
-
-                    </div> -->
                 </div>
                 <div class="mt-7 text-center text-gray-400 text-xs">
                     <span>
@@ -160,7 +162,6 @@
         </div>
     </div>
     </div>
-
     <script src="./index.js"></script>
 </body>
 

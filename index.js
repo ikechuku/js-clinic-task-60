@@ -291,8 +291,15 @@ saveButton.onclick = event => {
     data = getFormData();
     if (data.name && data.regNo && data.carSize) {
         bookLot()
-        console.log(JSON.stringify(data));
         closeModal()
+        bookedSlots.map((item) => {
+            if (item.slotNo == currentLot) {
+                item.bookedBy = data
+            }
+        })
+
+        console.log((bookedSlots));
+
         // localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
     }
     else {
